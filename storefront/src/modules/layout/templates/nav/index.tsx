@@ -30,9 +30,7 @@ export default async function Nav() {
       src="https://raw.githubusercontent.com/House-of-Bitcoin/logo/refs/heads/main/bitcoin.svg"
       alt="House of Bitcoin Logo"
     />
-    <span className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase">
-      House of Bitcoin
-    </span>
+
   </LocalizedClientLink>
 </div>
 
