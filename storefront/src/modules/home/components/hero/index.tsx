@@ -5,7 +5,6 @@ import { Button, Heading } from "@medusajs/ui"
 
 const Hero = () => {
   const [scrollY, setScrollY] = useState(0)
-  const [currentSlide, setCurrentSlide] = useState(0)
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY)
@@ -13,264 +12,257 @@ const Hero = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % 3)
-    }, 5000)
-    return () => clearInterval(timer)
-  }, [])
-
-  const features = [
-    {
-      title: "Rare Collectibles",
-      description: "Curated selection of exclusive Bitcoin artifacts",
-      icon: "💎"
-    },
-    {
-      title: "Verified Authenticity",
-      description: "Every piece authenticated and documented",
-      icon: "✓"
-    },
-    {
-      title: "Global Shipping",
-      description: "Secure delivery to Bitcoiners worldwide",
-      icon: "🌍"
-    }
-  ]
-
-  const heroSlides = [
-    {
-      title: "Luxury Bitcoin Collectibles",
-      subtitle: "Own a piece of Bitcoin history",
-      cta: "Explore Collection"
-    },
-    {
-      title: "Rare & Exclusive Artifacts",
-      subtitle: "For discerning Bitcoiners",
-      cta: "View Rarities"
-    },
-    {
-      title: "Premium Bitcoin Memorabilia",
-      subtitle: "Curated with passion, delivered with care",
-      cta: "Shop Now"
-    }
-  ]
-
   return (
-    <div className="relative">
+    <div className="relative bg-white">
       {/* Hero Section */}
-      <div className="relative h-[90vh] w-full overflow-hidden bg-gradient-to-br from-slate-900 via-orange-900/20 to-slate-900">
-        {/* Animated Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div 
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `radial-gradient(circle at 2px 2px, rgb(251, 146, 60) 1px, transparent 0)`,
-              backgroundSize: '50px 50px',
-              transform: `translateY(${scrollY * 0.3}px)`
-            }}
-          />
-        </div>
-
-        {/* Bitcoin Symbol Watermark */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-5">
-          <div 
-            className="text-[40rem] font-bold"
-            style={{ transform: `rotate(${scrollY * 0.1}deg)` }}
-          >
-            ₿
-          </div>
-        </div>
-
-        {/* Main Hero Content */}
-        <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4 sm:px-8">
-          <div className="max-w-5xl space-y-8 animate-fade-in">
-            {/* Slides */}
-            <div className="relative h-48">
-              {heroSlides.map((slide, idx) => (
-                <div
-                  key={idx}
-                  className={`absolute inset-0 transition-all duration-1000 ${
-                    currentSlide === idx 
-                      ? 'opacity-100 translate-y-0' 
-                      : 'opacity-0 translate-y-4 pointer-events-none'
-                  }`}
-                >
-                  <div className="inline-block mb-4 px-4 py-2 bg-orange-500/20 rounded-full border border-orange-500/30 backdrop-blur-sm">
-                    <span className="text-orange-400 text-sm font-semibold tracking-wider">
-                      EXCLUSIVE COLLECTION
-                    </span>
-                  </div>
-                  <Heading
-                    level="h1"
-                    className="text-5xl sm:text-7xl font-bold text-white mb-4 bg-gradient-to-r from-orange-400 via-orange-300 to-orange-400 bg-clip-text text-transparent"
-                  >
-                    {slide.title}
-                  </Heading>
-                  <p className="text-xl sm:text-2xl text-slate-300 mb-8">
-                    {slide.subtitle}
-                  </p>
-                </div>
-              ))}
+      <div className="relative h-[85vh] w-full overflow-hidden bg-neutral-50">
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 sm:px-8">
+          <div className="max-w-4xl space-y-6">
+            <div 
+              className="space-y-4"
+              style={{
+                transform: `translateY(${scrollY * 0.2}px)`,
+                transition: 'transform 0.1s ease-out'
+              }}
+            >
+              <Heading
+                level="h1"
+                className="text-5xl sm:text-7xl lg:text-8xl font-light text-neutral-900 tracking-tight"
+              >
+                Rare Bitcoin
+                <br />
+                Collectibles
+              </Heading>
+              <p className="text-lg sm:text-xl text-neutral-600 font-light max-w-2xl mx-auto">
+                Curated luxury items and exclusive memorabilia for discerning collectors
+              </p>
             </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="pt-8">
               <a href="/store">
                 <Button 
                   size="large"
-                  className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-6 text-lg font-semibold rounded-lg shadow-lg hover:shadow-orange-500/50 transition-all duration-300 hover:scale-105"
+                  className="bg-neutral-900 hover:bg-neutral-800 text-white px-12 py-6 text-base font-normal rounded-full transition-all duration-300"
                 >
-                  Explore Collection →
+                  Explore Collection
                 </Button>
               </a>
-              <a href="/collections">
-                <Button 
-                  size="large"
-                  variant="secondary"
-                  className="bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-sm px-8 py-6 text-lg font-semibold rounded-lg transition-all duration-300 hover:scale-105"
-                >
-                  View Rarities
-                </Button>
-              </a>
-            </div>
-
-            {/* Slide Indicators */}
-            <div className="flex gap-2 justify-center pt-8">
-              {heroSlides.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setCurrentSlide(idx)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    currentSlide === idx 
-                      ? 'bg-orange-500 w-8' 
-                      : 'bg-white/30 hover:bg-white/50'
-                  }`}
-                />
-              ))}
             </div>
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="text-white/50 text-sm flex flex-col items-center gap-2">
-            <span>Scroll to explore</span>
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
+        {/* Subtle scroll indicator */}
+        <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2">
+          <div className="w-6 h-10 border-2 border-neutral-300 rounded-full flex justify-center">
+            <div className="w-1 h-2 bg-neutral-400 rounded-full mt-2 animate-bounce" />
           </div>
         </div>
       </div>
 
-      {/* Features Section */}
-      <div className="bg-slate-950 py-20 border-t border-orange-500/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {features.map((feature, idx) => (
-              <div
-                key={idx}
-                className="group relative bg-gradient-to-br from-slate-900 to-slate-900/50 p-8 rounded-2xl border border-slate-800 hover:border-orange-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-orange-500/10"
-              >
-                <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {feature.icon}
+      {/* Featured Products Grid */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-20">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl font-light text-neutral-900 mb-3">
+            Featured Collection
+          </h2>
+          <p className="text-neutral-600 font-light">
+            Handpicked rare finds and exclusive pieces
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[
+            {
+              title: "Casascius Physical Bitcoin",
+              category: "Physical Coins",
+              price: "From $25,000",
+              image: "https://images.unsplash.com/photo-1518546305927-5a555bb7020d?w=800&q=80"
+            },
+            {
+              title: "Bitcoin Genesis Block Print",
+              category: "Art & Prints",
+              price: "$3,500",
+              image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&q=80"
+            },
+            {
+              title: "Ledger Collector's Edition",
+              category: "Hardware",
+              price: "$1,200",
+              image: "https://images.unsplash.com/photo-1621416894569-0f39ed31d247?w=800&q=80"
+            },
+            {
+              title: "Bitcoin Whitepaper 1st Print",
+              category: "Rare Books",
+              price: "$8,500",
+              image: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=800&q=80"
+            },
+            {
+              title: "Gold-Plated Bitcoin Coin",
+              category: "Physical Coins",
+              price: "$4,200",
+              image: "https://images.unsplash.com/photo-1605792657660-596af9009e82?w=800&q=80"
+            },
+            {
+              title: "Satoshi Nakamoto Portrait",
+              category: "Art & Prints",
+              price: "$2,800",
+              image: "https://images.unsplash.com/photo-1634704784915-aacf363b021f?w=800&q=80"
+            }
+          ].map((product, idx) => (
+            <a
+              key={idx}
+              href="/store"
+              className="group"
+            >
+              <div className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-neutral-100">
+                <div className="aspect-square overflow-hidden bg-neutral-50">
+                  <img
+                    src={product.image}
+                    alt={product.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-slate-400">
-                  {feature.description}
-                </p>
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/0 to-orange-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="p-6 space-y-2">
+                  <p className="text-xs uppercase tracking-wider text-neutral-500 font-light">
+                    {product.category}
+                  </p>
+                  <h3 className="text-lg font-normal text-neutral-900 group-hover:text-neutral-600 transition-colors">
+                    {product.title}
+                  </h3>
+                  <p className="text-neutral-900 font-light">
+                    {product.price}
+                  </p>
+                </div>
               </div>
-            ))}
-          </div>
+            </a>
+          ))}
+        </div>
+
+        <div className="text-center mt-16">
+          <a href="/store">
+            <Button 
+              variant="secondary"
+              size="large"
+              className="border-neutral-300 text-neutral-900 hover:bg-neutral-50 px-10 py-5 rounded-full font-normal transition-all duration-300"
+            >
+              View All Products
+            </Button>
+          </a>
         </div>
       </div>
 
-      {/* Featured Categories Preview */}
-      <div className="bg-gradient-to-b from-slate-950 to-slate-900 py-20">
+      {/* Categories Section */}
+      <div className="bg-neutral-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-white mb-4">
-              Featured Collections
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-light text-neutral-900 mb-3">
+              Shop by Category
             </h2>
-            <p className="text-slate-400 text-lg">
-              Discover exclusive Bitcoin artifacts and memorabilia
-            </p>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { name: "Physical Coins", emoji: "🪙", count: "24 items" },
-              { name: "Art & Prints", emoji: "🖼️", count: "18 items" },
-              { name: "Hardware", emoji: "💻", count: "12 items" },
-              { name: "Rare Books", emoji: "📚", count: "8 items" }
+              { 
+                name: "Physical Coins", 
+                image: "https://images.unsplash.com/photo-1621416894569-0f39ed31d247?w=600&q=80",
+                count: "24 items"
+              },
+              { 
+                name: "Art & Prints", 
+                image: "https://images.unsplash.com/photo-1513519245088-0e12902e35ca?w=600&q=80",
+                count: "18 items"
+              },
+              { 
+                name: "Hardware", 
+                image: "https://images.unsplash.com/photo-1639322537228-f710d846310a?w=600&q=80",
+                count: "12 items"
+              },
+              { 
+                name: "Rare Books", 
+                image: "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=600&q=80",
+                count: "8 items"
+              }
             ].map((category, idx) => (
               <a
                 key={idx}
                 href="/store"
-                className="group relative h-64 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl overflow-hidden border border-slate-700 hover:border-orange-500/50 transition-all duration-300 hover:scale-105"
+                className="group relative aspect-[3/4] rounded-3xl overflow-hidden bg-neutral-100"
               >
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent z-10" />
-                <div className="relative z-20 h-full flex flex-col justify-end p-6">
-                  <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                    {category.emoji}
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">
+                <img
+                  src={category.image}
+                  alt={category.name}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <h3 className="text-xl font-light mb-1">
                     {category.name}
                   </h3>
-                  <p className="text-orange-400 text-sm">
+                  <p className="text-sm text-white/80 font-light">
                     {category.count}
                   </p>
                 </div>
-                <div className="absolute inset-0 bg-orange-500/0 group-hover:bg-orange-500/5 transition-colors duration-300" />
               </a>
             ))}
           </div>
         </div>
       </div>
 
-      {/* Newsletter Section */}
-      <div className="bg-slate-900 py-20 border-t border-slate-800">
-        <div className="max-w-4xl mx-auto px-4 sm:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Stay Updated on Rare Drops
-          </h2>
-          <p className="text-slate-400 mb-8 text-lg">
-            Be the first to know about new exclusive Bitcoin collectibles
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-xl mx-auto">
+      {/* Trust Indicators */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          {[
+            {
+              title: "Authenticated",
+              description: "Every item is verified and comes with a certificate of authenticity"
+            },
+            {
+              title: "Secure Shipping",
+              description: "Fully insured worldwide delivery with signature confirmation"
+            },
+            {
+              title: "Expert Curation",
+              description: "Handpicked by Bitcoin historians and passionate collectors"
+            }
+          ].map((feature, idx) => (
+            <div key={idx} className="text-center space-y-3">
+              <h3 className="text-xl font-normal text-neutral-900">
+                {feature.title}
+              </h3>
+              <p className="text-neutral-600 font-light leading-relaxed">
+                {feature.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Newsletter */}
+      <div className="bg-neutral-900 text-white py-20">
+        <div className="max-w-2xl mx-auto px-4 sm:px-8 text-center space-y-8">
+          <div className="space-y-3">
+            <h2 className="text-3xl sm:text-4xl font-light">
+              Join Our Collectors Circle
+            </h2>
+            <p className="text-neutral-300 font-light text-lg">
+              Be first to access new arrivals and exclusive releases
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
             <input
               type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-6 py-4 rounded-lg bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-orange-500 transition-colors"
+              placeholder="Your email address"
+              className="flex-1 px-6 py-4 rounded-full bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white/40 transition-colors font-light"
             />
             <Button 
               size="large"
-              className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
+              className="bg-white text-neutral-900 hover:bg-neutral-100 px-8 py-4 rounded-full font-normal transition-all duration-300"
             >
               Subscribe
             </Button>
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes fade-in {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        .animate-fade-in {
-          animation: fade-in 1s ease-out;
-        }
-      `}</style>
     </div>
   )
 }
