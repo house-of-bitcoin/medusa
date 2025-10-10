@@ -1,6 +1,6 @@
 import { Text } from "@medusajs/ui"
 
-const SocialCTA = () => {
+const MedusaCTA = () => {
   const iconClass = "w-4 h-4 fill-gray-400 hover:fill-gray-600 transition"
 
   const socials = [
@@ -71,9 +71,9 @@ const SocialCTA = () => {
   ]
 
   return (
-    <Text className="flex gap-x-3 items-center txt-compact-small-plus">
+    <Text className="flex gap-x-2 txt-compact-small-plus items-center">
       Follow us:
-      <div className="flex gap-x-2">
+      <div className="flex gap-x-2 items-center">
         {socials.map(({ href, svg }) => (
           <a key={href} href={href} target="_blank" rel="noreferrer">
             {svg}
@@ -84,4 +84,4 @@ const SocialCTA = () => {
   )
 }
 
-export default SocialCTA
+export default MedusaCTA
