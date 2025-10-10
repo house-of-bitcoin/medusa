@@ -163,23 +163,23 @@ const Hero = () => {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { 
-                name: "Physical Coins", 
-                image: "https://images.unsplash.com/photo-1621416894569-0f39ed31d247?w=600&q=80",
+                name: "Cap Collection", 
+                image: "https://res.cloudinary.com/dcqfs6lkg/image/upload/v1760139031/mediamodifier-t8HiP3e5abg-unsplash_fjou1x.jpg",
                 count: "24 items"
               },
               { 
-                name: "Art & Prints", 
-                image: "https://images.unsplash.com/photo-1513519245088-0e12902e35ca?w=600&q=80",
+                name: "Bitcoin T-Shirt", 
+                image: "https://res.cloudinary.com/dcqfs6lkg/image/upload/v1760139033/haryo-setyadi-acn5ERAeSb4-unsplash_dm57mg.jpg",
                 count: "18 items"
               },
               { 
-                name: "Hardware", 
-                image: "https://images.unsplash.com/photo-1639322537228-f710d846310a?w=600&q=80",
+                name: "$BTC Art", 
+                image: "https://res.cloudinary.com/dcqfs6lkg/image/upload/v1760139032/adrianna-geo-1rBg5YSi00c-unsplash_e7euew.jpg",
                 count: "12 items"
               },
               { 
-                name: "Rare Books", 
-                image: "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=600&q=80",
+                name: "Shoe Collection", 
+                image: "https://res.cloudinary.com/dcqfs6lkg/image/upload/v1760139027/sandi-benedicta-1t3exe8H_nw-unsplash_r7ptc4.jpg",
                 count: "8 items"
               }
             ].map((category, idx) => (

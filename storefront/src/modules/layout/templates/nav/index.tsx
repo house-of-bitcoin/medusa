@@ -19,18 +19,22 @@ export default async function Nav() {
             </div>
           </div>
 
-          <div className="flex items-center h-full">
-          
-          <img width="45px" src="https://raw.githubusercontent.com/House-of-Bitcoin/logo/refs/heads/main/bitcoin.svg" />
-          
-            <LocalizedClientLink
-              href="/"
-              className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase"
-              data-testid="nav-store-link"
-            > 
-            
-            </LocalizedClientLink>            
-          </div>
+<div className="flex items-center h-full">
+  <LocalizedClientLink
+    href="/"
+    className="flex items-center gap-x-2"
+    data-testid="nav-store-link"
+  >
+    <img
+      width="45"
+      src="https://raw.githubusercontent.com/House-of-Bitcoin/logo/refs/heads/main/bitcoin.svg"
+      alt="House of Bitcoin Logo"
+    />
+    <span className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase">
+      House of Bitcoin
+    </span>
+  </LocalizedClientLink>
+</div>
 
           <div className="flex items-center gap-x-6 h-full flex-1 basis-0 justify-end">
             <div className="hidden small:flex items-center gap-x-6 h-full">
