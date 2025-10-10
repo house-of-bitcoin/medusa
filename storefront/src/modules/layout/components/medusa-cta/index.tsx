@@ -37,26 +37,10 @@ const MedusaCTA = () => {
       ),
     },
     {
-      href: "https://www.reddit.com/user/DomusBitcoin/",
-      svg: (
-        <svg className={iconClass} viewBox="0 0 24 24">
-          <path d="M12 2c5.52 0 10 3.58 10 8 0 1.97-1.07 3.73-2.8 5.01.12.38.18.77.18 1.17 0 2.78-3.13 5.04-7.38 5.04S4.62 19.96 4.62 17.18c0-.4.06-.79.18-1.17C3.07 13.73 2 11.97 2 10c0-4.42 4.48-8 10-8zm4.38 15.18a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5zm-8.76 0a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5zM12 14c1.53 0 2.5.8 2.5 1.5S13.53 17 12 17s-2.5-.8-2.5-1.5S10.47 14 12 14z" />
-        </svg>
-      ),
-    },
-    {
       href: "https://facebook.com/DomusBitcoin",
       svg: (
         <svg className={iconClass} viewBox="0 0 24 24">
           <path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.16 1.8.16v2h-1c-1 0-1.3.63-1.3 1.28V12h2.2l-.35 3h-1.85v7A10 10 0 0 0 22 12z" />
-        </svg>
-      ),
-    },
-    {
-      href: "https://www.twitch.tv/domusbitcoin",
-      svg: (
-        <svg className={iconClass} viewBox="0 0 24 24">
-          <path d="M4 2L3 6v15h5v1h3l1-1h3l4-4v-6h-6v3h3v2h-3l-1 1H9v-3H6V4h12v4h2V2H4z" />
         </svg>
       ),
     },
@@ -72,7 +56,6 @@ const MedusaCTA = () => {
 
   return (
     <Text className="flex gap-x-2 txt-compact-small-plus items-center">
-      Follow us:
       <div className="flex gap-x-2 items-center">
         {socials.map(({ href, svg }) => (
           <a key={href} href={href} target="_blank" rel="noreferrer">
