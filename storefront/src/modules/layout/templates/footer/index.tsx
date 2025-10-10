@@ -120,6 +120,15 @@ export default async function Footer() {
                 </li>
                 <li>
                   <a
+                    href="https://app.houseofbitcoin.com"
+                    target="_blank"
+                    className="hover:text-ui-fg-base"
+                  >
+                    Live Price Ticker
+                  </a>
+                </li>                
+                <li>
+                  <a
                     href="https://houseofbitcoin.com"
                     target="_blank"
                     className="hover:text-ui-fg-base"
@@ -136,6 +145,15 @@ export default async function Footer() {
                     $BTC Network
                   </a>
                 </li>
+                <li>
+                  <a
+                    href="https://houseofbitcoin.com/domus-bitcoin"
+                    target="_blank"
+                    className="hover:text-ui-fg-base"
+                  >
+                    Bitcoin Heritage
+                  </a>
+                </li>                
               </ul>
             </div>
           </div>
