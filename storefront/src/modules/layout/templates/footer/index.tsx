@@ -144,7 +144,7 @@ export default async function Footer() {
           <Text className="txt-compact-small">
             © {new Date().getFullYear()} House of Bitcoin. All rights reserved.
           </Text>
-          <MedusaCTA />
+          <SocialCTA />
         </div>
       </div>
     </footer>
