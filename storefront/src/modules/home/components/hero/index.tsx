@@ -29,12 +29,12 @@ const Hero = () => {
                 level="h1"
                 className="text-5xl sm:text-7xl lg:text-8xl font-light text-neutral-900 tracking-tight"
               >
-                Rare Bitcoin
+                Bitcoin
                 <br />
-                Collectibles
+                Store
               </Heading>
               <p className="text-lg sm:text-xl text-neutral-600 font-light max-w-2xl mx-auto">
-                Curated luxury items and exclusive memorabilia for discerning collectors
+                Curated luxury items and exclusive memorabilia for bitcoin collectors
               </p>
             </div>
 
@@ -66,47 +66,47 @@ const Hero = () => {
             Featured Collection
           </h2>
           <p className="text-neutral-600 font-light">
-            Handpicked rare finds and exclusive pieces
+            Handpicked limited edition and exclusive pieces
           </p>
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
             {
-              title: "Casascius Physical Bitcoin",
-              category: "Physical Coins",
+              title: "Bitcoin T-Shirt",
+              category: "Merch",
               price: "From $25,000",
-              image: "https://images.unsplash.com/photo-1518546305927-5a555bb7020d?w=800&q=80"
+              image: "https://res.cloudinary.com/dcqfs6lkg/image/upload/v1760139033/haryo-setyadi-acn5ERAeSb4-unsplash_dm57mg.jpg"
             },
             {
-              title: "Bitcoin Genesis Block Print",
-              category: "Art & Prints",
+              title: "Bitcoin Genesis",
+              category: "Art",
               price: "$3,500",
-              image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&q=80"
+              image: "https://res.cloudinary.com/dcqfs6lkg/image/upload/v1760139032/adrianna-geo-1rBg5YSi00c-unsplash_e7euew.jpg"
             },
             {
               title: "Ledger Collector's Edition",
               category: "Hardware",
               price: "$1,200",
-              image: "https://images.unsplash.com/photo-1621416894569-0f39ed31d247?w=800&q=80"
+              image: "https://res.cloudinary.com/dcqfs6lkg/image/upload/v1760139033/haryo-setyadi-acn5ERAeSb4-unsplash_dm57mg.jpg"
             },
             {
               title: "Bitcoin Whitepaper 1st Print",
-              category: "Rare Books",
+              category: "Collectors",
               price: "$8,500",
-              image: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=800&q=80"
+              image: "https://res.cloudinary.com/dcqfs6lkg/image/upload/v1760139032/adrianna-geo-1rBg5YSi00c-unsplash_e7euew.jpg"
             },
             {
-              title: "Gold-Plated Bitcoin Coin",
-              category: "Physical Coins",
+              title: "Bitcoin Cap",
+              category: "Merch",
               price: "$4,200",
-              image: "https://images.unsplash.com/photo-1605792657660-596af9009e82?w=800&q=80"
+              image: "https://res.cloudinary.com/dcqfs6lkg/image/upload/v1760139031/mediamodifier-t8HiP3e5abg-unsplash_fjou1x.jpg"
             },
             {
               title: "Satoshi Nakamoto Portrait",
-              category: "Art & Prints",
+              category: "Art",
               price: "$2,800",
-              image: "https://images.unsplash.com/photo-1634704784915-aacf363b021f?w=800&q=80"
+              image: "https://res.cloudinary.com/dcqfs6lkg/image/upload/v1760139032/adrianna-geo-1rBg5YSi00c-unsplash_e7euew.jpg"
             }
           ].map((product, idx) => (
             <a
