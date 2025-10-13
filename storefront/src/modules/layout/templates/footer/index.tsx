@@ -153,7 +153,16 @@ export default async function Footer() {
                   >
                     Bitcoin Heritage
                   </a>
-                </li>                
+                </li>      
+                <li>
+                  <a
+                    href="https://bitcoinsuperchat.com"
+                    target="_blank"
+                    className="hover:text-ui-fg-base"
+                  >
+                    Superchat
+                  </a>
+                </li>                  
               </ul>
             </div>
           </div>
