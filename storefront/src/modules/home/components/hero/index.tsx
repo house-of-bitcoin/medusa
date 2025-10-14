@@ -29,7 +29,7 @@ const Hero = () => {
                 level="h1"
                 className="text-5xl sm:text-7xl lg:text-8xl font-light text-neutral-900 tracking-tight"
               >
-                Bitcoin
+                ₿itcoin
                 <br />
                 Store
               </Heading>
