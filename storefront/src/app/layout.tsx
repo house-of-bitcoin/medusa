@@ -11,6 +11,9 @@ export default function RootLayout(props: { children: React.ReactNode }) {
     <html lang="en" data-mode="light">
     
       <head>
+<link rel="preconnect" href="https://cdn.houseofbitcoin.com" />
+<link rel="preload" href="https://cdn.houseofbitcoin.com/fonts/Satoshi-Variable.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="https://cdn.houseofbitcoin.com/css/satoshi.css" />
         <script
           defer
           src="https://analytics.wearemetallic.com/script.js"
