@@ -120,11 +120,11 @@ export default async function Footer() {
                 </li>
                 <li>
                   <a
-                    href="https://app.houseofbitcoin.com"
+                    href="https://ticker.houseofbitcoin.com"
                     target="_blank"
                     className="hover:text-ui-fg-base"
                   >
-                    Live Price Ticker
+                    Bitcoin Price Ticker
                   </a>
                 </li>                
                 <li>
@@ -138,16 +138,16 @@ export default async function Footer() {
                 </li>
                 <li>
                   <a
-                    href="https://houseofbitcoin.com/maison-network"
+                    href="https://houseofbitcoin.com/events"
                     target="_blank"
                     className="hover:text-ui-fg-base"
                   >
-                    $BTC Network
+                    BTC Events
                   </a>
                 </li>
                 <li>
                   <a
-                    href="https://houseofbitcoin.com/domus-bitcoin"
+                    href="https://houseofbitcoin.com/heritage"
                     target="_blank"
                     className="hover:text-ui-fg-base"
                   >
@@ -156,11 +156,11 @@ export default async function Footer() {
                 </li>      
                 <li>
                   <a
-                    href="https://bitcoinsuperchat.com"
+                    href="https://houseofbitcoin.com/strategy"
                     target="_blank"
                     className="hover:text-ui-fg-base"
                   >
-                    +Superchat
+                    Corporate Strategy
                   </a>
                 </li>                  
               </ul>
