@@ -14,8 +14,14 @@ const Hero = () => {
 
   return (
     <div className="relative bg-white">
+    
       {/* Hero Section */}
-      <div className="relative h-[85vh] w-full overflow-hidden bg-neutral-50">
+      <div
+  className="relative h-[85vh] w-full overflow-hidden bg-center bg-cover"
+  style={{
+    backgroundImage: "url('https://res.cloudinary.com/dcqfs6lkg/image/upload/v1761606118/man-5419522_minnji.jpg')",
+  }}
+>
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 sm:px-8">
           <div className="max-w-4xl space-y-6">
             <div 
