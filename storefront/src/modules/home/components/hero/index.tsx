@@ -33,16 +33,20 @@ const Hero = () => {
             >
 <Heading
   level="h1"
-  className="text-5xl sm:text-7xl lg:text-8xl font-light text-neutral-900 tracking-tight font-satoshi"
+  className="text-5xl sm:text-7xl lg:text-8xl font-light text-white tracking-tight font-satoshi"
+  style={{ textShadow: '0 2px 6px rgba(0,0,0,0.4)' }}
 >
   ₿itcoin
   <br />
   Store
 </Heading>
 
-              <p className="text-lg sm:text-xl text-neutral-600 font-light max-w-2xl mx-auto">
-                Curated luxury items and exclusive memorabilia for bitcoin collectors
-              </p>
+<p
+  className="text-lg sm:text-xl text-white font-light max-w-2xl mx-auto"
+  style={{ textShadow: '0 1px 4px rgba(0,0,0,0.4)' }}
+>
+  Curated luxury items and exclusive memorabilia for bitcoin collectors
+</p>
             </div>
 
             <div className="pt-8">
